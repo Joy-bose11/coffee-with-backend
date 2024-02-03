@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
+require("dotenv").config();
 
 //middlewares
 app.use(
@@ -9,6 +10,7 @@ app.use(
     origin: process.env.CORS_ORIGIN,
   })
 );
+
 app.use(express.json({ limit: "5kb" }));
 app.use(express.urlencoded({ extended: true, limit: "10kb" }));
 app.use(express.static("public"));
